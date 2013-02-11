@@ -1,5 +1,6 @@
 /* LESS CSS GENERAL VARIABLES */
-@main-color: #F16529;
+//@main-color: #f16529;
+@main-color: #2BDFEF;
 
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
@@ -77,23 +78,23 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid darken(@main-color, 10%);
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid darken(@main-color, 10%);
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: @main-color;
 }
 
 footer.wrapper h3.credits {
 	color: #333;
-	text-shadow: -1px -1px 0 #E44D26;
+	text-shadow: -1px -1px 0 darken(@main-color, 10%);
 }
 footer.wrapper .credits a {
 	color: #444;
@@ -127,7 +128,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
+    background: darken(@main-color, 10%);
 }
 
 nav a:hover,
@@ -217,7 +218,7 @@ article label {
 	margin: 5px 0;
 }
 .text-input:focus, .text-area:focus, .text-input:hover, .text-area:hover, .text-input.hover, .text-area.hover {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIIPKRrGOBgMDAwAZlEFDgLnNWMAAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggAL1G6+lcDAYGBgAdi8GDU4kdZ8AAAAASUVORK5CYII=) repeat;
 	.global-shadow(5px, @main-color);
 	border-color: desaturate(@main-color, 50%);
 }
