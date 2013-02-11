@@ -8,6 +8,6 @@ Tools used:
 - Less CSS
 - jQuery
 
-
+Demo: http://andresigualada.com/css-form-pack/
 
 PS: Not tested in major browsers yet
