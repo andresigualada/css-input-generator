@@ -155,8 +155,9 @@ nav a:hover {
 .main p { text-align: justify; }
 
 .main aside {
-    color: white;
-    padding: 0px 5% 10px;
+		background-color: #e0e0e0;
+    color: #333;
+    padding: 0px 2% 10px;
 }
 
 .footer-container footer {
@@ -209,7 +210,7 @@ article label {
 	.inline-block;
 }
 .text-input, .text-area {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=) repeat white;
 	.rounded;
 	padding: 4px;
 	border: 1px solid #aaa;
@@ -217,15 +218,18 @@ article label {
 	.global-shadow(3px, #888);
 	margin: 5px 0;
 }
+#input-pattern,#input-shadow,#input-border {
+	width: 340px;
+}
 .text-input:focus, .text-area:focus, .text-input:hover, .text-area:hover, .text-input.hover, .text-area.hover {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggAL1G6+lcDAYGBgAdi8GDU4kdZ8AAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggAL1G6+lcDAYGBgAdi8GDU4kdZ8AAAAASUVORK5CYII=) repeat white;
 	.global-shadow(5px, @main-color);
 	border-color: desaturate(@main-color, 50%);
 }
 
 .text-input:disabled, .text-area:disabled {
 	text-decoration: line-through;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAADklEQVQImWNgQABj3AwACukAmiK6xLEAAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAADklEQVQImWNgQABj3AwACukAmiK6xLEAAAAASUVORK5CYII=) repeat white;
 	.global-shadow(3px, #888);
 	border: 1px solid #aaa;
 }
@@ -315,8 +319,20 @@ hr.separator {
 	line-height: 1;
 }
 
+#canvas-pattern {
+	.hidden;
+	/*width: 3px;
+	height: 3px;*/
+}
 
-
+#canvas-div {
+	width: 100px;
+	height: 50px;
+	border: 1px solid gray;
+	.inline-block;
+	.global-shadow(2px, black);
+	.rounded;
+}
 
 
 
@@ -399,7 +415,7 @@ hr.separator {
 
     .main aside {
         float: right;
-        width: 28%;
+        width: 34%;
     }
 }
 
@@ -418,6 +434,9 @@ hr.separator {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.right { float: right; }
+.left { float: left; }
 
 .ir {
     background-color: transparent;
