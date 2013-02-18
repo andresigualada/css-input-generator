@@ -59,6 +59,10 @@ textarea {
     padding: 0.2em 0;
 }
 
+header a {
+	text-decoration: none;
+}
+
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
@@ -155,8 +159,9 @@ nav a:hover {
 .main p { text-align: justify; }
 
 .main aside {
-    color: white;
-    padding: 0px 5% 10px;
+		background-color: #e0e0e0;
+    color: #333;
+    padding: 0px 2% 10px;
 }
 
 .footer-container footer {
@@ -198,18 +203,61 @@ nav a:hover {
 	_display: inline;
 	zoom: 1;
 }
+.bold {
+	font-weight: bold;
+}
 
 
 textarea:focus, input:focus{
     outline: none;
 }
 
-article label {
+label {
 	min-width: 130px;
+	font-size: 15px;
 	.inline-block;
 }
-.text-input, .text-area {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=) repeat;
+label:before {
+	content: "» ";
+}
+aside label {
+	width: 200px;
+}
+aside input[type="checkbox"] {
+	width: 33.3%;
+}
+
+div.bbottom { border-bottom: 1px solid #CCCCCC; }
+div.states {
+	color: #666;
+	font-size: 13px;
+}
+div.states span, .input-gen, .input-gen-shadow, .input-opts {
+	.inline-block;
+	font-style: italic;
+	width: 22%;
+	margin: 0 0 0 2%;
+	text-align: center;
+	vertical-align: middle;
+	border: 0;
+}
+div.states input.result-input {
+	margin-top: 20px;
+	margin-left: 2%;
+	min-width: 50px !important;
+	width: 70%;	
+}
+
+div.states span.head {
+	width: 25%;
+	margin: 0;
+	text-align: right;
+}
+
+
+
+.text-input, .text-area, .result-input {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=) repeat white;
 	.rounded;
 	padding: 4px;
 	border: 1px solid #aaa;
@@ -217,15 +265,16 @@ article label {
 	.global-shadow(3px, #888);
 	margin: 5px 0;
 }
+
 .text-input:focus, .text-area:focus, .text-input:hover, .text-area:hover, .text-input.hover, .text-area.hover {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggAL1G6+lcDAYGBgAdi8GDU4kdZ8AAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggAL1G6+lcDAYGBgAdi8GDU4kdZ8AAAAASUVORK5CYII=) repeat white;
 	.global-shadow(5px, @main-color);
 	border-color: desaturate(@main-color, 50%);
 }
 
 .text-input:disabled, .text-area:disabled {
 	text-decoration: line-through;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAADklEQVQImWNgQABj3AwACukAmiK6xLEAAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAADklEQVQImWNgQABj3AwACukAmiK6xLEAAAAASUVORK5CYII=) repeat white;
 	.global-shadow(3px, #888);
 	border: 1px solid #aaa;
 }
@@ -269,6 +318,13 @@ button.submit {
 button.submit:hover { 
 	background-color: softlight(darken(@color-submit, 10%), @color-submit);
 }
+#get-css {
+	font-size: 13px;
+	height: 28px;
+	letter-spacing: 1px;
+	margin-top: 4px;
+}
+#get-css:hover { margin-top: 6px; }
 
 @color-buy: gold;
 button.buy {
@@ -315,8 +371,43 @@ hr.separator {
 	line-height: 1;
 }
 
+#canvas-pattern {
+	.hidden;
+	/*width: 3px;
+	height: 3px;*/
+}
 
-
+#canvas-div {
+	width: 200px;
+	height: 50px;
+	border: 1px solid gray;
+	.inline-block;
+	.global-shadow(2px, black);
+	.rounded;
+}
+#css-wrapper {
+	display: none;
+}
+#css-code {
+	background-color: #EEEEEE;
+	border: 1px solid #BBBBBB;
+	.rounded;
+	margin-top: 10px;
+	padding: 10px;
+	line-height: 13px;
+	font-size: 12px;
+}
+#css-code pre {
+	margin: 0; 
+	text-shadow: -1px -1px white;
+	font-size: 12px;
+}
+.css-selector {
+	color: #962727;
+}
+.css-property {
+	color: #267693;
+}
 
 
 
@@ -339,6 +430,7 @@ hr.separator {
         margin: 0 1.7%;
         padding: 25px 2%;
         margin-bottom: 0;
+				outline: none;
     }
 
     nav li:first-child a {
@@ -393,13 +485,13 @@ hr.separator {
    ============ */
 
     .main article {
-        float: left;
-        width: 57%;
+        float: right;
+        width: 51%;
     }
 
     .main aside {
-        float: right;
-        width: 28%;
+        float: left;
+        width: 40%;
     }
 }
 
@@ -418,6 +510,9 @@ hr.separator {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.right { float: right; }
+.left { float: left; }
 
 .ir {
     background-color: transparent;
