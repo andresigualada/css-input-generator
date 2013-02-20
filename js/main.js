@@ -158,13 +158,15 @@ $(function() {
 		$(elm).html('<span class="css-selector">' + sel_normal + ' {</span>');
 		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
 		$(elm).append('url(' + base64_normal + ");");
+		$(elm).append('<br />\t<span class="css-property">background-repeat: </span>');
+		$(elm).append("repeat;");
 		
 		$("[data-result='example-input-normal'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
 		});
 		
-		var box_shadow = '<br />\t<span class="css-property">box-shadow: </span>';
+		var box_shadow = '<br />\t<span class="css-property">box-shadow:</span>';
 		$("[data-result='example-input-normal'] .input-gen-shadow").each(function() {
 			box_shadow += " " + $(this).val();
 		});
@@ -177,13 +179,15 @@ $(function() {
 		$(elm).append('<br /><br /><span class="css-selector">' + sel_hover + ' {</span>');
 		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
 		$(elm).append('url(' + base64_hover + ");");
+		$(elm).append('<br />\t<span class="css-property">background-repeat: </span>');
+		$(elm).append("repeat;");
 		
 		$("[data-result='example-input-hover'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
 		});
 		
-		var box_shadow = '<br />\t<span class="css-property">box-shadow: </span>';
+		var box_shadow = '<br />\t<span class="css-property">box-shadow:</span>';
 		$("[data-result='example-input-hover'] .input-gen-shadow").each(function() {
 			box_shadow += " " + $(this).val();
 		});
@@ -196,13 +200,15 @@ $(function() {
 		$(elm).append('<br /><br /><span class="css-selector">' + sel_focus + ' {</span>');
 		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
 		$(elm).append('url(' + base64_focus + ");");
+		$(elm).append('<br />\t<span class="css-property">background-repeat: </span>');
+		$(elm).append("repeat;");
 		
 		$("[data-result='example-input-focus'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
 		});
 		
-		var box_shadow = '<br />\t<span class="css-property">box-shadow: </span>';
+		var box_shadow = '<br />\t<span class="css-property">box-shadow:</span>';
 		$("[data-result='example-input-focus'] .input-gen-shadow").each(function() {
 			box_shadow += " " + $(this).val();
 		});
