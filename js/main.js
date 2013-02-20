@@ -1,7 +1,10 @@
 $(function() {
 	var r = 242,g = 253, b = 254;
-	var base64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=";
+	var base64_normal = base64_hover = base64_focus = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=";
 	var rgb_format_text = "rgb(124, 45, 200), black, #BF1A1A";
+	
+	$( "div.accordion-child" ).accordion({ header: "span.head.bold", collapsible: true });
+	$( "div.accordion-child:eq(1),div.accordion-child:eq(2)" ).accordion("option", "active", 2);
 	
 	$('#text-input-std').textField();
 	$('#text-input-hover').textField({
@@ -49,6 +52,16 @@ $(function() {
 		activeColor: '#666'
 	});
 	
+	$('#background-color-normal,#background-color-hover,#background-color-focus').textField({
+		text: '#FFF',
+		activeColor: '#666'
+	});
+	
+	$('#background-image-normal,#background-image-hover,#background-image-focus').textField({
+		text: '#777',
+		activeColor: '#666'
+	});
+	
 	$('#box-shadow-offset-normal,#box-shadow-offset-hover,#box-shadow-offset-focus').textField({
 		text: '0 0',
 		activeColor: '#666'
@@ -61,6 +74,11 @@ $(function() {
 	
 	$('#box-shadow-color-normal,#box-shadow-color-hover,#box-shadow-color-focus').textField({
 		text: '#888',
+		activeColor: '#666'
+	});
+	
+	$('#color-normal,#color-hover,#color-focus').textField({
+		text: '#222',
 		activeColor: '#666'
 	});
 	
@@ -86,6 +104,26 @@ $(function() {
 		var box_shadow = $this.children("[data-type='box-shadow-offset']").val() + " " + $this.children("[data-type='box-shadow-size']").val() + " " + $this.children("[data-type='box-shadow-color']").val();
 
 		$("#" + $this.attr('data-result')).css("box-shadow", box_shadow);
+	});
+	
+	$('.input-gen-bck').keyup(function() {
+		var $this = $(this).parent();
+		
+		var color = new Color( $(this).val() );
+		if(color.rgb === null)
+			return false;
+
+		var rgb = color.get("rgb");
+		var data = drawCanvas(rgb[0], rgb[1], rgb[2], 100);
+		
+		$("#" + $this.attr('data-result')).css("background-image", "url(" + data + ")");
+		
+		if($this.attr('data-result') == 'example-input-normal')
+			base64_normal = data;
+		else if($this.attr('data-result') == 'example-input-hover')
+			base64_hover = data;
+		else
+			base64_focus = data;
 	});
 	
 	// Show css code
@@ -118,7 +156,9 @@ $(function() {
 
 		// Normal state:
 		$(elm).html('<span class="css-selector">' + sel_normal + ' {</span>');
-		$(elm).append('<br />\t<span class="css-property">background: </span> url(' + base64 + ") repeat scroll 0 0 #fff;");
+		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
+		$(elm).append('url(' + base64_normal + ");");
+		
 		$("[data-result='example-input-normal'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
@@ -133,8 +173,11 @@ $(function() {
 		
 		$(elm).append('<br /><span class="css-selector">}</span>');
 		
-		// Hover state:
+		// Hover state:		
 		$(elm).append('<br /><br /><span class="css-selector">' + sel_hover + ' {</span>');
+		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
+		$(elm).append('url(' + base64_hover + ");");
+		
 		$("[data-result='example-input-hover'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
@@ -151,6 +194,9 @@ $(function() {
 		
 		// Focus state:
 		$(elm).append('<br /><br /><span class="css-selector">' + sel_focus + ' {</span>');
+		$(elm).append('<br />\t<span class="css-property">background-image: </span>');
+		$(elm).append('url(' + base64_focus + ");");
+		
 		$("[data-result='example-input-focus'] .input-gen").each(function() {
 			var prop = '<span class="css-property">' + $(this).attr("data-type") + ": </span>";
 			$(elm).append("<br />\t" + prop + $(this).val() + ";");
@@ -167,7 +213,6 @@ $(function() {
 		window.location.hash = "#css-wrapper";
 	});
 	
-	//base64 = drawCanvas(r, g, b, 100);
 });
 
 function removeChar(str, i) {
@@ -179,7 +224,7 @@ function isArray(obj) {
    return Object.prototype.toString.call(obj) === '[object Array]';
 }
 
-function drawCanvas(r, g, b, a) {
+function drawCanvas(r, g, b, a, element) {
 	var c=document.getElementById("canvas-pattern");
 	var ctx=c.getContext("2d");
 
@@ -207,8 +252,6 @@ function drawCanvas(r, g, b, a) {
 	}
 
 	ctx.putImageData(imgData,0,0);
-	
-	$('#canvas-input').css("background", "url(" + c.toDataURL() + ") repeat");
 	
 	return c.toDataURL();
 }

@@ -231,8 +231,9 @@ div.bbottom { border-bottom: 1px solid #CCCCCC; }
 div.states {
 	color: #666;
 	font-size: 13px;
+	margin: 5px 0;
 }
-div.states span, .input-gen, .input-gen-shadow, .input-opts {
+div.states span, .input-gen, .input-gen-shadow, .input-gen-bck, .input-opts {
 	.inline-block;
 	font-style: italic;
 	width: 22%;
@@ -245,7 +246,7 @@ div.states input.result-input {
 	margin-top: 20px;
 	margin-left: 2%;
 	min-width: 50px !important;
-	width: 70%;	
+	width: 68%;	
 }
 
 div.states span.head {
@@ -396,11 +397,13 @@ hr.separator {
 	padding: 10px;
 	line-height: 13px;
 	font-size: 12px;
+	overflow-x: auto;
 }
 #css-code pre {
 	margin: 0; 
 	text-shadow: -1px -1px white;
 	font-size: 12px;
+	white-space: pre;
 }
 .css-selector {
 	color: #962727;
@@ -409,6 +412,43 @@ hr.separator {
 	color: #267693;
 }
 
+
+.ui-accordion-header {
+	cursor: pointer;
+	color: #555;
+	border: 1px solid transparent;
+	.inline-block;
+	margin: 10px 0 0;
+}
+
+.ui-accordion-header:hover {
+	text-decoration: underline;
+	color: #333;
+	.rounded;
+}
+.ui-accordion-header-active {
+	text-shadow: -1px -1px white;
+	color: #333;
+	background-color: desaturate(lighten(@main-color, 27%), 27%);
+	border-color: #999 #999 transparent;
+	border-radius: 4px 4px 0 0;
+	padding: 2px 8px 1px;
+	box-shadow: -1px -1px 0 1px #cecece, 2px 0 #EFEFEF;
+}
+.ui-accordion-header-active:hover {
+	text-decoration: none;
+}
+.ui-accordion-header:after {
+	content: " »";
+}
+
+.ui-accordion-content {
+	border-radius: 0 4px 4px 4px;
+	background-color: desaturate(lighten(@main-color, 35%), 50%);
+	border: 1px solid #999;
+	padding: 10px 0;
+	box-shadow: -1px -1px 0 1px #cecece, 0px 0px 0 2px #efefef;
+}
 
 
 

@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/normalize.min.css">
+				<link rel="stylesheet" href="css/no-theme/jquery-ui-1.10.1.custom.css">
 				<link rel="stylesheet/less" type="text/css" href="css/style.less" />
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -37,68 +38,111 @@
 
 								<aside>
 									<h3 id="customize">customize your input:</h3>
-<!-- NORMAL STATE -->									
-									<div class="states bbottom">
-										<span class="head bold">normal state</span>
-									</div>
-									<div class="states" data-result="example-input-normal">
-										<span class="head">border</span><input id="border-width-normal" type="text" data-type="border-width" class="input-gen"/><input id="border-style-normal" type="text" data-type="border-style" class="input-gen" /><input id="border-color-normal" type="text" data-type="border-color" class="input-gen"/>
-									</div>
-									
-									<div class="states" data-result="example-input-normal">
-										<span class="head">border-radius</span><input id="border-radius-normal" type="text" data-type="border-radius" class="input-gen" />
-									</div>
-									
-									<div class="states" data-result="example-input-normal" data-type="box-shadow">
-										<span class="head">box-shadow</span><input id="box-shadow-offset-normal" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-normal" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-normal" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
-									</div>
-									<div class="states">
-										<span class="head">result</span><input id="example-input-normal" type="text" class="result-input"/>
-									</div>
-									<div class="clearfix"></div>
-									<br />
-									
-<!-- ON HOVER STATE -->									
-									<div class="states bbottom">
-										<span class="head bold">hover state</span>
-									</div>
-									<div class="states" data-result="example-input-hover">
-										<span class="head">border</span><input id="border-width-hover" type="text" data-type="border-width" class="input-gen"/><input id="border-style-hover" type="text" data-type="border-style" class="input-gen" /><input id="border-color-hover" type="text" data-type="border-color" class="input-gen"/>
-									</div>
-									
-									<div class="states" data-result="example-input-hover">
-										<span class="head">border-radius</span><input id="border-radius-hover" type="text" data-type="border-radius" class="input-gen" />
-									</div>
-									
-									<div class="states" data-result="example-input-hover" data-type="box-shadow">
-										<span class="head">box-shadow</span><input id="box-shadow-offset-hover" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-hover" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-hover" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
-									</div>
-									<div class="states">
-										<span class="head">result</span><input id="example-input-hover" type="text" class="result-input"/>
-									</div>
-									<div class="clearfix"></div>
-									<br />
+
+									<div id="accordion-wrapper">
+<!-- NORMAL STATE -->
+											<div class="accordion-child">
+												<span class="head bold">normal state</span>
+												<div>
+													<div class="states" data-result="example-input-normal">
+														<span class="head">bck-image</span><input id="background-image-normal" type="text" data-type="background-image" class="input-gen-bck"/>
+													</div>
+													<div class="states" data-result="example-input-normal">
+														<span class="head">bck-color</span><input id="background-color-normal" type="text" data-type="background-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-normal">
+														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-normal">
+														<span class="head">border</span><input id="border-width-normal" type="text" data-type="border-width" class="input-gen"/><input id="border-style-normal" type="text" data-type="border-style" class="input-gen" /><input id="border-color-normal" type="text" data-type="border-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-normal">
+														<span class="head">border-radius</span><input id="border-radius-normal" type="text" data-type="border-radius" class="input-gen" />
+													</div>
+													
+													<div class="states" data-result="example-input-normal" data-type="box-shadow">
+														<span class="head">box-shadow</span><input id="box-shadow-offset-normal" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-normal" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-normal" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
+													</div>
+													<div class="states">
+														<span class="head">result</span><input id="example-input-normal" type="text" class="result-input"/>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											
+											
+		<!-- ON HOVER STATE -->									
+											<div class="accordion-child">
+												<span class="head bold">hover state</span>
+												<div>
+													<div class="states" data-result="example-input-hover">
+														<span class="head">bck-image</span><input id="background-image-hover" type="text" data-type="background-image" class="input-gen-bck"/>
+													</div>
+													<div class="states" data-result="example-input-hover">
+														<span class="head">bck-color</span><input id="background-color-hover" type="text" data-type="background-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-hover">
+														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-hover">
+														<span class="head">border</span><input id="border-width-hover" type="text" data-type="border-width" class="input-gen"/><input id="border-style-hover" type="text" data-type="border-style" class="input-gen" /><input id="border-color-hover" type="text" data-type="border-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-hover">
+														<span class="head">border-radius</span><input id="border-radius-hover" type="text" data-type="border-radius" class="input-gen" />
+													</div>
+													
+													<div class="states" data-result="example-input-hover" data-type="box-shadow">
+														<span class="head">box-shadow</span><input id="box-shadow-offset-hover" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-hover" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-hover" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
+													</div>
+													<div class="states">
+														<span class="head">result</span><input id="example-input-hover" type="text" class="result-input"/>
+													</div>
+												</div>
+												</div>
+											<div class="clearfix"></div>
+											
 
 
-<!-- ON FOCUS STATE -->									
-									<div class="states bbottom">
-										<span class="head bold">focus state</span>
-									</div>
-									<div class="states" data-result="example-input-focus">
-										<span class="head">border</span><input id="border-width-focus" type="text" data-type="border-width" class="input-gen"/><input id="border-style-focus" type="text" data-type="border-style" class="input-gen" /><input id="border-color-focus" type="text" data-type="border-color" class="input-gen"/>
+		<!-- ON FOCUS STATE -->									
+											<div class="accordion-child">
+												<span class="head bold">focus state</span>
+												<div>
+													<div class="states" data-result="example-input-focus">
+														<span class="head">bck-image</span><input id="background-image-focus" type="text" data-type="background-image" class="input-gen-bck"/>
+													</div>
+													<div class="states" data-result="example-input-focus">
+														<span class="head">bck-color</span><input id="background-color-focus" type="text" data-type="background-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-focus">
+														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-focus">
+														<span class="head">border</span><input id="border-width-focus" type="text" data-type="border-width" class="input-gen"/><input id="border-style-focus" type="text" data-type="border-style" class="input-gen" /><input id="border-color-focus" type="text" data-type="border-color" class="input-gen"/>
+													</div>
+													
+													<div class="states" data-result="example-input-focus">
+														<span class="head">border-radius</span><input id="border-radius-focus" type="text" data-type="border-radius" class="input-gen" />
+													</div>
+													
+													<div class="states" data-result="example-input-focus" data-type="box-shadow">
+														<span class="head">box-shadow</span><input id="box-shadow-offset-focus" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-focus" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-focus" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
+													</div>
+													<div class="states">
+														<span class="head">result</span><input id="example-input-focus" type="text" class="result-input"/>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
 									</div>
 									
-									<div class="states" data-result="example-input-focus">
-										<span class="head">border-radius</span><input id="border-radius-focus" type="text" data-type="border-radius" class="input-gen" />
-									</div>
-									
-									<div class="states" data-result="example-input-focus" data-type="box-shadow">
-										<span class="head">box-shadow</span><input id="box-shadow-offset-focus" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-focus" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-focus" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
-									</div>
-									<div class="states">
-										<span class="head">result</span><input id="example-input-focus" type="text" class="result-input"/>
-									</div>
-									<div class="clearfix"></div>
 									
 									<canvas id="canvas-pattern" width="3" height="3"></canvas>
 									<hr />
@@ -144,11 +188,15 @@
         </div>
 
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
+				<script src="js/vendor/jquery-ui-1.10.1.custom.min.js"></script>
+				<script src="js/vendor/Color.class.js"></script>
+				<script src="js/vendor/String.class.js"></script>
 				<script src="js/vendor/jquery.text-field.js"></script>
 				
         <script src="js/main.js"></script>
 
         <script type="text/javascript">			
+				/*
 					var _gaq = _gaq || [];
 					_gaq.push(['_setAccount', 'UA-35866915-3']);
 					_gaq.push(['_trackPageview']);
@@ -158,6 +206,7 @@
 						ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 					})();
+				*/
 				</script>
     </body>
 </html>
