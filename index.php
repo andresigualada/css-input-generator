@@ -41,10 +41,25 @@
 									<h3 id="customize">customize your input:</h3>
 
 									<div id="accordion-wrapper">
-<!-- NORMAL STATE -->
+
+										<?php for($i = 0; $i<3; $i++): 
+											switch($i) {
+												case 0:
+													$state = "normal";
+													break;
+												case 1:
+													$state = "hover";
+													break;
+												case 2:
+													$state = "focus";
+													break;
+											}
+											
+										?>
+									
 											<div class="accordion-child">
-												<span class="head bold">normal state</span>
-												<div data-id="example-input-normal">
+												<span class="head bold"><?php echo $state; ?> state</span>
+												<div data-id="example-input-<?php echo $state; ?>">
 													<div class="states">
 														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
 													</div>
@@ -55,6 +70,10 @@
 													
 													<div class="states">
 														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
+													</div>
+													
+													<div class="states">
+														<span class="head">padding</span><span data-type="padding" class="input-gen input-size"></span>
 													</div>
 													
 													<div class="states">
@@ -69,79 +88,13 @@
 														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
 													</div>
 													<div class="states">
-														<span class="head">result</span><input id="example-input-normal" type="text" class="result-input" readonly="readonly"/>
+														<span class="head">result</span><input id="example-input-<?php echo $state; ?>" type="text" class="result-input" readonly="readonly"/>
 													</div>
 												</div>
 											</div>
 											<div class="clearfix"></div>
 											
-<!-- ON HOVER STATE -->											
-											<div class="accordion-child">
-												<span class="head bold">hover state</span>
-												<div data-id="example-input-hover">
-													<div class="states">
-														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">bck-color</span><span data-type="background-color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">border</span><span data-type="border-width" class="input-gen input-size"></span><span data-type="border-style" class="input-gen input-style"></span><span data-type="border-color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">border-radius</span><span data-type="border-radius" class="input-gen input-size"></span>
-													</div>
-													
-													<div class="states" data-type="box-shadow">
-														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
-													</div>
-													<div class="states">
-														<span class="head">result</span><input id="example-input-hover" type="text" class="result-input" readonly="readonly"/>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
-											
-<!-- ON FOCUS STATE -->											
-											<div class="accordion-child">
-												<span class="head bold">focus state</span>
-												<div data-id="example-input-focus">
-													<div class="states">
-														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">bck-color</span><span data-type="background-color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">border</span><span data-type="border-width" class="input-gen input-size"></span><span data-type="border-style" class="input-gen input-style"></span><span data-type="border-color" class="input-gen input-color"></span>
-													</div>
-													
-													<div class="states">
-														<span class="head">border-radius</span><span data-type="border-radius" class="input-gen input-size"></span>
-													</div>
-													
-													<div class="states" data-type="box-shadow">
-														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
-													</div>
-													<div class="states">
-														<span class="head">result</span><input id="example-input-focus" type="text" class="result-input" readonly="readonly"/>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
+										<?php endfor; ?>
 
 									</div>
 									
