@@ -207,6 +207,58 @@ nav a:hover {
 	font-weight: bold;
 }
 
+.control {
+	width: 17px;
+	height: 18px;
+	background-image: url(../img/inputs_light.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: white;
+	.inline-block;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	.right
+}
+.control.down { background-position: 0 0; .left; }
+.control.up { background-position: -17px 0; }
+.control.color { background-position: -17px*2 0; }
+.control.opts { background-position: -17px*3 0; }
+
+.control.down:hover { background-position: 0 100%; }
+.control.up:hover { background-position: -17px 100%;}
+.control.color:hover { background-position: -17px*2 100%;}
+.control.opts:hover { background-position: -17px*3 100%; }
+
+.toggleOpts {
+	position: absolute;
+	background: #bfbfbf;
+	text-align: left;
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: 1px solid #888;
+}
+.toggleOpts ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.toggleOpts li {
+	border-top: 1px solid #888;
+	padding: 2px;
+	cursor: pointer;
+}
+.toggleOpts li:first-child {
+	border-top: 0;
+}
+.toggleOpts li:before {
+	content: "- ";
+}
+.toggleOpts li:hover {
+	background-color: #828282;
+	color: #eee;
+}
 
 textarea:focus, input:focus{
     outline: none;
@@ -242,11 +294,19 @@ div.states span, .input-gen, .input-gen-shadow, .input-gen-bck, .input-opts {
 	vertical-align: middle;
 	border: 0;
 }
+.input-gen, .input-gen-shadow, .input-gen-bck {
+	height: 18px;
+	background-color: white;
+}
+div.states span .value {
+	width: auto !important;
+	text-align: center;
+}
 div.states input.result-input {
 	margin-top: 20px;
 	margin-left: 2%;
 	min-width: 50px !important;
-	width: 68%;	
+	width: 60%;	
 }
 
 div.states span.head {
@@ -257,7 +317,7 @@ div.states span.head {
 
 
 
-.text-input, .text-area, .result-input {
+.text-input, .text-area {
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=) repeat white;
 	.rounded;
 	padding: 4px;

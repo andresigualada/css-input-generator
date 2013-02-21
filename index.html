@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/normalize.min.css">
 				<link rel="stylesheet" href="css/no-theme/jquery-ui-1.10.1.custom.css">
 				<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+				<link rel="stylesheet" type="text/css" href="css/colorpicker.css" />
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 				
@@ -43,104 +44,105 @@
 <!-- NORMAL STATE -->
 											<div class="accordion-child">
 												<span class="head bold">normal state</span>
-												<div>
-													<div class="states" data-result="example-input-normal">
-														<span class="head">bck-image</span><input id="background-image-normal" type="text" data-type="background-image" class="input-gen-bck"/>
-													</div>
-													<div class="states" data-result="example-input-normal">
-														<span class="head">bck-color</span><input id="background-color-normal" type="text" data-type="background-color" class="input-gen"/>
+												<div data-id="example-input-normal">
+													<div class="states">
+														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-normal">
-														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
+													<div class="states">
+														<span class="head">bck-color</span><span data-type="background-color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-normal">
-														<span class="head">border</span><input id="border-width-normal" type="text" data-type="border-width" class="input-gen"/><input id="border-style-normal" type="text" data-type="border-style" class="input-gen" /><input id="border-color-normal" type="text" data-type="border-color" class="input-gen"/>
+													<div class="states">
+														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-normal">
-														<span class="head">border-radius</span><input id="border-radius-normal" type="text" data-type="border-radius" class="input-gen" />
+													<div class="states">
+														<span class="head">border</span><span data-type="border-width" class="input-gen input-size"></span><span data-type="border-style" class="input-gen input-style"></span><span data-type="border-color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-normal" data-type="box-shadow">
-														<span class="head">box-shadow</span><input id="box-shadow-offset-normal" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-normal" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-normal" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
+													<div class="states">
+														<span class="head">border-radius</span><span data-type="border-radius" class="input-gen input-size"></span>
+													</div>
+													
+													<div class="states" data-type="box-shadow">
+														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
 													</div>
 													<div class="states">
-														<span class="head">result</span><input id="example-input-normal" type="text" class="result-input"/>
+														<span class="head">result</span><input id="example-input-normal" type="text" class="result-input" readonly="readonly"/>
 													</div>
 												</div>
 											</div>
 											<div class="clearfix"></div>
 											
-											
-		<!-- ON HOVER STATE -->									
+<!-- ON HOVER STATE -->											
 											<div class="accordion-child">
 												<span class="head bold">hover state</span>
-												<div>
-													<div class="states" data-result="example-input-hover">
-														<span class="head">bck-image</span><input id="background-image-hover" type="text" data-type="background-image" class="input-gen-bck"/>
-													</div>
-													<div class="states" data-result="example-input-hover">
-														<span class="head">bck-color</span><input id="background-color-hover" type="text" data-type="background-color" class="input-gen"/>
+												<div data-id="example-input-hover">
+													<div class="states">
+														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-hover">
-														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
+													<div class="states">
+														<span class="head">bck-color</span><span data-type="background-color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-hover">
-														<span class="head">border</span><input id="border-width-hover" type="text" data-type="border-width" class="input-gen"/><input id="border-style-hover" type="text" data-type="border-style" class="input-gen" /><input id="border-color-hover" type="text" data-type="border-color" class="input-gen"/>
+													<div class="states">
+														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-hover">
-														<span class="head">border-radius</span><input id="border-radius-hover" type="text" data-type="border-radius" class="input-gen" />
+													<div class="states">
+														<span class="head">border</span><span data-type="border-width" class="input-gen input-size"></span><span data-type="border-style" class="input-gen input-style"></span><span data-type="border-color" class="input-gen input-color"></span>
 													</div>
 													
-													<div class="states" data-result="example-input-hover" data-type="box-shadow">
-														<span class="head">box-shadow</span><input id="box-shadow-offset-hover" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-hover" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-hover" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
+													<div class="states">
+														<span class="head">border-radius</span><span data-type="border-radius" class="input-gen input-size"></span>
+													</div>
+													
+													<div class="states" data-type="box-shadow">
+														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
 													</div>
 													<div class="states">
-														<span class="head">result</span><input id="example-input-hover" type="text" class="result-input"/>
-													</div>
-												</div>
-												</div>
-											<div class="clearfix"></div>
-											
-
-
-		<!-- ON FOCUS STATE -->									
-											<div class="accordion-child">
-												<span class="head bold">focus state</span>
-												<div>
-													<div class="states" data-result="example-input-focus">
-														<span class="head">bck-image</span><input id="background-image-focus" type="text" data-type="background-image" class="input-gen-bck"/>
-													</div>
-													<div class="states" data-result="example-input-focus">
-														<span class="head">bck-color</span><input id="background-color-focus" type="text" data-type="background-color" class="input-gen"/>
-													</div>
-													
-													<div class="states" data-result="example-input-focus">
-														<span class="head">text-color</span><input id="color-normal" type="text" data-type="color" class="input-gen"/>
-													</div>
-													
-													<div class="states" data-result="example-input-focus">
-														<span class="head">border</span><input id="border-width-focus" type="text" data-type="border-width" class="input-gen"/><input id="border-style-focus" type="text" data-type="border-style" class="input-gen" /><input id="border-color-focus" type="text" data-type="border-color" class="input-gen"/>
-													</div>
-													
-													<div class="states" data-result="example-input-focus">
-														<span class="head">border-radius</span><input id="border-radius-focus" type="text" data-type="border-radius" class="input-gen" />
-													</div>
-													
-													<div class="states" data-result="example-input-focus" data-type="box-shadow">
-														<span class="head">box-shadow</span><input id="box-shadow-offset-focus" type="text" data-type="box-shadow-offset" class="input-gen-shadow" /><input id="box-shadow-size-focus" type="text" data-type="box-shadow-size" class="input-gen-shadow" /><input id="box-shadow-color-focus" type="text" data-type="box-shadow-color" class="input-gen-shadow"/>
-													</div>
-													<div class="states">
-														<span class="head">result</span><input id="example-input-focus" type="text" class="result-input"/>
+														<span class="head">result</span><input id="example-input-hover" type="text" class="result-input" readonly="readonly"/>
 													</div>
 												</div>
 											</div>
 											<div class="clearfix"></div>
+											
+<!-- ON FOCUS STATE -->											
+											<div class="accordion-child">
+												<span class="head bold">focus state</span>
+												<div data-id="example-input-focus">
+													<div class="states">
+														<span class="head">bck-image</span><span data-type="background-image" class="input-gen-bck input-color"></span>
+													</div>
+													
+													<div class="states">
+														<span class="head">bck-color</span><span data-type="background-color" class="input-gen input-color"></span>
+													</div>
+													
+													<div class="states">
+														<span class="head">text-color</span><span data-type="color" class="input-gen input-color"></span>
+													</div>
+													
+													<div class="states">
+														<span class="head">border</span><span data-type="border-width" class="input-gen input-size"></span><span data-type="border-style" class="input-gen input-style"></span><span data-type="border-color" class="input-gen input-color"></span>
+													</div>
+													
+													<div class="states">
+														<span class="head">border-radius</span><span data-type="border-radius" class="input-gen input-size"></span>
+													</div>
+													
+													<div class="states" data-type="box-shadow">
+														<span class="head">box-shadow</span><span data-type="box-shadow-offset" class="input-gen-shadow"></span><span data-type="box-shadow-size" class="input-gen-shadow"></span><span data-type="box-shadow-color" class="input-gen-shadow"></span>
+													</div>
+													<div class="states">
+														<span class="head">result</span><input id="example-input-focus" type="text" class="result-input" readonly="readonly"/>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+
 									</div>
 									
 									
@@ -192,6 +194,9 @@
 				<script src="js/vendor/Color.class.js"></script>
 				<script src="js/vendor/String.class.js"></script>
 				<script src="js/vendor/jquery.text-field.js"></script>
+				<script type="text/javascript" src="js/vendor/colorpicker.js"></script>
+				<script type="text/javascript" src="js/vendor/eye.js"></script>
+				<script type="text/javascript" src="js/vendor/utils.js"></script>
 				
         <script src="js/main.js"></script>
 

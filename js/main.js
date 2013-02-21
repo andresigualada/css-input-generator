@@ -90,8 +90,106 @@ $(function() {
 		text: '.fancy-input',
 		activeColor: '#666'
 	});
-	
 
+	$('#example-input-normal,#example-input-hover,#example-input-focus').bind('changeCSS', function(e, css) {
+		$(this).css(css.prop, css.val);
+	});
+	
+	$('.input-size').each(function() {		
+		var $this = $(this);
+		$this.append('<div class="control down"></div>').append('<span data-value="0" class="value">0 px</span>').append('<div class="control up"></div>');
+		$this.find(".down").bind('click', function() {
+			var input = $this.find(".value");
+			var val = input.attr('data-value');
+			val--;
+			input.attr('data-value', val).text(val + ' px');
+			
+			var elm = $this.parent().parent().attr('data-id');
+			$('#' + elm).trigger('changeCSS', { "prop": $this.attr('data-type'), "val": val + 'px' });
+		});
+		$this.find(".up").bind('click', function() {
+			var input = $this.find(".value");
+			var val = input.attr('data-value');
+			val++;
+			input.attr('data-value', val).text(val + ' px');
+			
+			var elm = $this.parent().parent().attr('data-id');
+			$('#' + elm).trigger('changeCSS', { "prop": $this.attr('data-type'), "val": val + 'px' });
+		});
+		
+	});
+	
+	$('.input-color').each(function() {
+		var $this = $(this);
+		$this.append('<span data-value="#000000" class="value"></span>').append('<div class="control color"></div>');
+		var $colorpicker = $this.find('.control.color');
+		$colorpicker.ColorPicker({
+			color: '#000000',
+			onShow: function (colpkr) {
+				$(colpkr).show();
+				return false;
+			},
+			onHide: function (colpkr) {
+				$(colpkr).hide();
+				return false;
+			},
+			onChange: function (hsb, hex, rgb) {
+				var val = '#' + hex;
+				$colorpicker.css('backgroundColor', val);
+				$this.find('.value').attr('data-value', val).text(val);
+				
+				var elm = $this.parent().parent().attr('data-id');
+				
+				if($this.attr('data-type') === 'background-image') {
+					val = "url(" + drawCanvas(rgb.r, rgb.g, rgb.b, 100) + ")";
+				}
+				
+				$('#' + elm).trigger('changeCSS', { "prop": $this.attr('data-type'), "val": val });
+			}
+		});
+	});
+	
+	$('.input-style').each(function() {
+		var $this = $(this);
+		$this.append('<span class="value"></span>').append('<div class="control opts"></div>');
+		$this.find('.value').attr('data-value', 'none').text('none');
+		
+		$this.find('.opts').bind('click', function(e) {
+			if($this.find('.toggleOpts').length > 0) {
+				var toggle = $this.find('.toggleOpts');
+				if(toggle.hasClass('hidden')) {
+					$('.toggleOpts').addClass('hidden');
+					toggle.removeClass('hidden');
+				}
+				else {
+					toggle.addClass('hidden');
+				}
+			}
+			else {
+				$('.toggleOpts').addClass('hidden');
+				var ul = '<ul><li>none</li><li>dashed</li><li>double</li><li>dotted</li><li>groove</li><li>inset</li><li>outset</li><li>ridge</li><li>solid</li></ul>';
+				
+				$this.append('<div class="toggleOpts">' + ul + '</div>');
+				
+				$this.find('.toggleOpts li').bind('click', function() {
+					var val = $(this).text();
+					$this.find('.value').attr('data-value', val).text(val);
+					$this.find('.toggleOpts').addClass('hidden');
+					
+					var elm = $this.parent().parent().attr('data-id');
+					$('#' + elm).trigger('changeCSS', { "prop": $this.attr('data-type'), "val": val });
+				});
+			}
+			
+			var width = $this.width() - 6;
+			if($this.find('.toggleOpts').height() >= 100)
+				width = width + 18;
+				
+			$this.find('.toggleOpts li').width(width);
+		});
+	});
+	
+/*
 	// Example inputs
 	$('.input-gen').keyup(function() {
 		if($(this).val() == "")
@@ -125,7 +223,7 @@ $(function() {
 		else
 			base64_focus = data;
 	});
-	
+*/
 	// Show css code
 	$('#get-css').click(function() {
 		$('#css-wrapper').show();
